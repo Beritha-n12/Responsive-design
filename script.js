@@ -13,27 +13,6 @@ document.querySelectorAll('a.nav-link').forEach(anchor => {
     });
 });
 
-// Add a navigation highlight on scroll
-const sections = document.querySelectorAll('main > section');
-const navLinks = document.querySelectorAll('a.nav-link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 100 && pageYOffset < sectionTop + sectionHeight - 100) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
 
 const expandableHeadings = document.querySelectorAll('#education .container .expandable');
   
